@@ -1,3 +1,5 @@
+
+
 const anecdotesAtStart = [
   'If it hurts, do it more often',
   'Adding manpower to a late software project makes it later!',
@@ -17,6 +19,33 @@ const asObject = (anecdote) => {
   }
 }
 
+
+//Action creator
+const vote = (id) => {
+  console.log('vote', id)
+
+  return (
+    {
+      type: 'VOTE',
+      payload: { id }
+    }
+  )
+}
+
+
+//Action creator
+const addAnecdote = (newAnecdote) => {
+  return (
+    {
+      type: 'ADD_NEW',
+      payload: {
+        newAnecdote
+      }
+    })
+}
+
+
+//Sorting by votes
 const getInOrderByVotes = (arr) => {
   return arr.sort((a, b) => b.votes - a.votes)
 }
@@ -43,4 +72,4 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-export default reducer
+export { reducer, vote, addAnecdote }
