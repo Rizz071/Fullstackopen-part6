@@ -30,6 +30,10 @@ const reducer = (state = initialState, action) => {
         return anecdote
       })
 
+    case 'ADD_NEW':
+      return state.concat(asObject(action.payload.newAnecdote))
+
+
     default:
       return state
   }
