@@ -17,6 +17,10 @@ const asObject = (anecdote) => {
   }
 }
 
+const getInOrderByVotes = (arr) => {
+  return arr.sort((a, b) => b.votes - a.votes)
+}
+
 const initialState = anecdotesAtStart.map(asObject)
 
 const reducer = (state = initialState, action) => {
@@ -25,10 +29,10 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'VOTE':
-      return state.map(anecdote => {
+      return getInOrderByVotes(state.map(anecdote => {
         if (anecdote.id === action.payload.id) anecdote.votes += 1
         return anecdote
-      })
+      }))
 
     case 'ADD_NEW':
       return state.concat(asObject(action.payload.newAnecdote))
