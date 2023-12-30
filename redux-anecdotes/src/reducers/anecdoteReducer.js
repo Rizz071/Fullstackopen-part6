@@ -20,13 +20,7 @@ const asObject = (anecdote) => {
 }
 
 
-//Sorting by votes
-const getInOrderByVotes = (arr) => {
-  return arr.sort((a, b) => b.votes - a.votes)
-}
-
 const initialState = anecdotesAtStart.map(asObject)
-
 
 
 const anecdoteSlice = createSlice({
