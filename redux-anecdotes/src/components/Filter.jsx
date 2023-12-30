@@ -7,7 +7,7 @@ const Filter = () => {
     const handleChange = (event) => {
         event.preventDefault()
 
-        dispatch(setFilterString(event.target.value))
+        dispatch(setFilterString({ string: event.target.value }))
     }
 
     const style = {
