@@ -40,7 +40,7 @@ const AnecdoteForm = () => {
     }
   })
 
-  const onCreate = (event) => {
+  const onCreate1 = (event) => {
     event.preventDefault()
     const content = event.target.anecdote.value
     event.target.anecdote.value = ''
